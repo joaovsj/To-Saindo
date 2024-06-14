@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
+
+
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+/*
+
+    #0c122c -> fundo
+    #4fc3dc -> azul
+    #ff2d75 -> rosa
+
+*/
+main{
+    font-size: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100%;
+    background-color: #0c122c;
+}
+
+main header{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #FFF;
+}
+
+main header .title{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+main header .title a{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #FFF;
+}
+
+  
+main header .title>i{
+    color: #FFF;
+    font-size: 1.5rem;
+  }
+
+main header #nav ul{
+    display: flex;
+}
+
+
+
+#menu a:hover{
+    /* red, green, blue, alpha(opacidade) */
+background-color: #ff2d75;
+color:#0c122c;
+}    
+
+#menu{
+    display: flex;
+    list-style-type: none;
+    gap: .5rem; /*cria um espaçamento entre os itens flex, sem margin ou padding*/
+  }
+  
+  #menu a{
+    display: block;
+    color: #FFF;
+    padding: .5rem;
+  }
+  
+  #btn-mobile{
+    display: none;
+  }
+  
+  /*Tudo que estiver abaixo de 600px*/
+  @media(max-width: 600px){
+    #menu{
+      display: block;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+      top: 70px;
+      right: 0px;
+      background-color: #0c122c;
+      height: 0;
+      transition: .6s;
+      z-index: 1000; /*fica por cima de todos outros elementos do site*/
+      visibility: hidden; 
+      overflow-y: hidden;
+      
+      /*VISIBILITY, pode mostrar ou ocultar um elemento, sem afetar o layout do dodocumento,(ou seja, o espaço é criado para elementos independentemente de serem visíveis ou não).*/
+    }
+  
+    #menu li{
+      width: 100%;
+    }
+  
+    #menu li>a{
+      padding-left: 20px;
+    }
+  
+  /*quando o nav tiver a classe de active, eu quero que o menu*/
+    #nav.active #menu{
+      height: calc(100vh - 70px); /*não cria scroll, 100vh menos o height do nav*/
+      visibility: visible;
+      overflow-y: auto;
+    }
+  
+    #menu a{
+      padding: 1rem 0;
+      margin: 0 1rem;
+      border-bottom: 1px solid #0c122c;
+    }
+  
+    #btn-mobile{
+      display: flex;
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;    
+      gap: .5rem;
+    }
+  
+    #hamburguer{
+      border-top: 3px solid;
+      width: 25px;
+      color: #FFF;
+    }
+  /* pseudo elementos em containers, são criados dentro do elemento*/
+    #hamburguer::after, #hamburguer::before{
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25px;
+      background: currentColor;
+      margin-top: 5px;
+      transition: .3s;
+    }
+    /*qunado o nav estiver ativo o hamburguer*/
+    #nav.active #hamburguer{
+      border-top-color: transparent;
+    }
+  
+    #nav.active #hamburguer::before{
+      transform: rotate(135deg);
+    }
+  
+    #nav.active #hamburguer::after{
+      transform: rotate(-135deg);
+      position: relative;
+      top: -7px;
+    }
+}
+
+.content{
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.content .first-content{
+  height: 25vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.content .first-content .img{
+  height: 75px;
+  width: 75px;
+  transform: translateX(25px);
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.content .first-content p{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #FFF;
+}
+
+.content .first-content p::after{
+  content: '';
+  display: block;
+  margin-top: 10px;
+  height: 3px;
+  width: 50%;
+  background-color: #FFF;
+}
+
+
+.content .last-content{
+  position: relative;
+  margin: 0 auto;
+  height: 45vh;
+  width: 80%;
+  border-radius: 20px;
+  background-color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: scale(1);
+  box-shadow: 40px 40px 50px #000;
+  animation: lastContent 2s alternate infinite;
+}
+
+@keyframes lastContent{
+  to{
+    transform: scale(0.9);
+  }
+}
+
+.content .last-content::before{
+  content: '';
+  display: block;
+  position: absolute;
+  height: 130%;
+  width: 100px;
+  background: linear-gradient(163deg, rgb(77, 218, 250) 0%, rgb(250, 0, 87) 100%);
+  animation: animateBorder 5s linear infinite;
+}
+
+@keyframes animateBorder {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.content .last-content::after{
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: #FFF;
+  inset: 5px;
+  border-radius: 20px;
+}
+
+.content .last-content .qrcode{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  z-index: 4;
+}
+
+.content>p{
+  text-align: center;
+  color: #FFF;
+  margin-top: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+

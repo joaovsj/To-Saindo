@@ -1,0 +1,522 @@
+
+/*
+    #0c122c -> fundo
+    #4fc3dc -> azul
+    #ff2d75 -> rosa
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+:root{
+    --deg: background: linear-gradient(115deg, rgba(12,18,44,1) 0%, rgba(79,195,220,1) 45%, rgba(255,45,117,1) 100%);;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: #0c122c;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.bubbles{
+    position: relative;
+    display: flex;
+}
+
+.bubbles span{
+    height: 30px;
+    width: 30px;
+    background-color:  #4fc3dc;
+    border-radius: 50%;
+    margin: 0 10px;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animateBubbles 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even){
+    background-color: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+}
+
+@keyframes animateBubbles{
+    from{
+        transform: translateY(100vh) scale(0);
+    }to{
+        transform: translateY(-10vh) scale(0.8);
+    }
+}
+
+/*////////////////////////////////////////////////////////////*/
+
+.form{
+    height: 100vh;
+    width: 50%;
+    background: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form .content-form{
+    margin-top: 15vh;
+    padding: 0 10px 40px 10px;
+    width: 450px;
+    border-radius: 10px;
+    background-color: #4fc3dc30;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    animation: animateForms .9s ease forwards;
+    animation-delay: 1s;
+}
+
+.form .content-form>h1{
+    padding: 30px 30px 10px 30px;
+    color: #FFF;
+    font-size: 2rem;
+    text-transform: capitalize;
+} 
+
+.form .content-form>h1::after{
+    content: '';
+    display: block;
+    height: 4px;
+    width: 50%;
+    margin: 10px 0;
+    background-color: #4fc3dc;
+}
+
+form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.form .content-form>a{
+    margin-top: 2vh;
+    color: rgba(255,255, 255, 0.25);
+    text-align: center;
+    text-decoration: none;
+}
+
+form .inputBox{
+    position: relative;
+    width: 225px;
+}
+
+.inputBox input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    background-color: transparent;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    color: #FFF;
+}
+
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.25);
+    pointer-events: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: .2s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background-color: #00dfc4;
+    color: #1d2b3a;
+    border-radius: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus{
+    border: 1px solid #00dfc4;
+}
+
+.form-button{
+    width: 225px;
+}
+
+.form-button>button{
+    width: 100%;
+    padding: 10px;
+    background-color: #ff2d75;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.form-button>button:hover{
+    background-color: transparent;
+    color: #ff2d75;
+    padding: 8px;
+    border: 2px solid #ff2d75;
+    outline: none;
+}
+
+.form-button>button:active{
+    transform: scale(0.9);
+}
+
+@keyframes animateForms{
+    to{
+        opacity: 1;
+    }
+}
+
+
+/*/////////////////////*/
+.sectionTitulo{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionTitulo .boxTitulo{
+    background-color: transparent;
+    padding-left: 25px;
+    --border-left: 8px solid #00dfc4;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.sectionTitulo .boxTitulo::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -100%;
+    opacity: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-left: 5px solid #4fc3dc;
+    animation: animateBarra 1.5s ease forwards;
+    animation-delay: 2s;
+}
+
+@keyframes animateBarra{
+    to{
+        opacity: 1;
+        top: 0;    
+    }
+}
+
+.sectionTitulo .boxTitulo h1>span{
+    font-size: 5rem;
+    color: #ff2d75;
+}
+
+.sectionTitulo .boxTitulo>h1{
+    position: relative;
+    transform: translateX(-110%);
+    font-size: 3rem;
+    color: #FFF;
+    animation: animateTitulo 2s ease forwards;
+    animation-delay: 3s;
+}
+
+.secondText{
+    display: none;
+}
+
+@keyframes animateTitulo{
+    to{
+        transform: translateX(0);
+    }
+}
+
+
+
+/*///////////////////////////////////////////////*/
+
+@media (max-width: 1250px) {
+    .sectionTitulo{
+        opacity: .7;
+    }
+    .sectionTitulo .boxTitulo h1>span{
+        font-size: 4rem;
+    }
+    
+    .sectionTitulo .boxTitulo>h1{
+        font-size: 2rem;
+    }
+    .form{
+        height: 100vh;
+        width: 60%;
+        background: transparent;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1000px) {
+    .sectionTitulo{
+        opacity: .7;
+        width: 45%;
+    }
+    .sectionTitulo .boxTitulo h1>span{
+        font-size: 4rem;
+    }
+    
+    .sectionTitulo .boxTitulo>h1{
+        font-size: 2rem;
+    }
+    .form{
+        height: 100vh;
+        width: 65%;
+        background: transparent;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 950px) {
+    .sectionTitulo{
+        opacity: 0;
+    }
+    .form{
+        width: 100%;
+        background: transparent;
+    }
+
+    .bubbles{
+        display: none;
+    }    
+}
+
+@media (max-width: 550px) {
+    
+    .sectionTitulo{
+        opacity: 1;
+        height: 30vh;
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .secondText{
+        display: block;
+        background-color: #FFF;
+        color: #0c122c;
+        padding: 1.2rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        opacity: 0;
+        transform: translateY(-15vh);
+        animation: iconMobile .9s ease forwards;
+        animation-delay: 1.5s;
+    }
+
+    @keyframes iconMobile {
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /*/////////////////////*/
+
+    .sectionTitulo>.boxTitulo{
+        display: none;
+    }
+
+    .form{
+        width: 100%;
+        background: transparent;
+    }
+
+    .bubbles{
+        display: none;
+    }
+
+    .form .content-form{
+        margin-top: 30vh;
+        padding: 0 10px 80px 10px;
+        width: 100%;
+        height: 70vh;
+        border-radius: 40px 0 0 0;
+        background-color: #f5f5f5;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        opacity: 1;
+        transform: translateX(100%);
+        animation: segundoConteudo 2s ease forwards;
+    }
+
+    @keyframes segundoConteudo {
+        to{
+            transform: translateX(0);
+        }
+    }
+
+    .form .content-form>h1{
+        padding: 30px 30px 10px 30px;
+        color: #0c122c;
+        font-size: 1.8rem;
+        text-transform: capitalize;
+    } 
+    
+    .form .content-form>h1::after{
+        content: '';
+        display: block;
+        height: 4px;
+        width: 45%;
+        margin: 15px 0;
+        background-color: #0c122c;
+        /*#0c122c -> fundo
+        #4fc3dc -> azul
+        #ff2d75 -> rosa*/
+    }
+
+    form{
+        margin-top: 5vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .inputBox input{
+        width: 100%;
+        padding: 10px;
+        background-color: #FFF;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+        border-radius: 5px;
+        outline: none;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.9em;
+        color: black;
+    }
+
+    .inputBox span{
+        position: absolute;
+        left: 0;
+        padding: 10px;
+        color: rgba(0, 0, 0, 0.3);
+        pointer-events: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: .2s;
+    }
+
+    .inputBox input:valid ~ span,
+    .inputBox input:focus ~ span{
+        transform: translateX(10px) translateY(-7px);
+        font-size: 0.65em;
+        padding: 0 10px;
+        background-color: #0c122c;
+        color: #FFF;
+        border-radius: 2px;
+    }
+
+    .inputBox input:valid,
+    .inputBox input:focus{
+        border: 1.5px solid #0c122c;
+    }
+    .form-button{
+        width: 225px;
+    }
+    
+    .form-button>button{
+        width: 100%;
+        padding: 10px;
+        background-color: #ff2d75;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+        color: #FFF;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    .form .content-form>a{
+        margin: 0;
+        color: rgba(0, 0, 0, 0.70);
+        text-align: center;
+        text-decoration: none;
+    }
+
+}
+
+.error{
+    position: absolute;
+    background-color: #ff2d75;
+    z-index: 2;
+    padding: 15px 20px;
+    color: #FFF;
+    border-radius: 20px 20px 0 20px;
+    top: 8%;
+    right: 10%;
+    opacity: 0;
+    transform: translateX(20px);
+    animation: mensagem 2.5s ease-in;
+}
+
+@keyframes mensagem {
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

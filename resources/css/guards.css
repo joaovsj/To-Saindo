@@ -1,0 +1,170 @@
+.content-one{
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    height: min-content;
+    padding: 60px 40px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 15px;   
+    opacity: 0;
+    animation: animateContent .8s ease forwards;
+}   
+.content-one table{
+    position: relative;
+    width: 90%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-collapse: collapse;
+}
+
+.content-one table thead{
+    background-color:  #0c122c;  
+    color: #FFF;
+    line-height: 40px; 
+}
+
+.content-one table thead th:first-child{
+    width: 25%;
+}
+
+.content-one table tbody td{
+    position: relative;
+    text-align: center;
+    padding: 10px;
+}
+
+.content-one table tbody td:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0 5px;
+}
+
+.content-one table tbody td:last-child a{
+    display: block;
+    margin: auto;
+    text-decoration: none;
+}
+
+.content-one table tbody td:last-child a button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background-color: #0c122c;
+}
+
+.content-one table tbody td:last-child>button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background-color: #0c122c;
+}
+
+.content-one table tbody td:last-child button i{
+    font-size: 1.3rem;
+}
+
+.content-one table tbody td div{
+    position: relative;
+    margin: 0 auto;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.content-one table tbody td div img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.content-one table tbody td div #foto-item{
+    position: absolute;
+    transform: translate(-10%, -90%);
+    width: 370%;
+    height: 400%;
+    border-radius: 50% 50% 50% 0;
+    cursor: default;
+    transition: .2s;
+    opacity: 0;
+}
+
+.content-one table tbody td div img:hover + #foto-item{
+    opacity: 1;
+}
+
+.content-one table tbody td div>img{
+    border-radius: 50%;
+}
+
+/*///////////////////*/
+
+.content-one .buttonBox{
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    gap: 0 20px;
+    width: 90%;
+
+}
+
+.content-one .buttonBox a, button{
+    height: 90%;
+    width: 150px;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.content-one .buttonBox a .btn-cancel{
+    background-color: transparent;
+    border: 2px solid #0c122c;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0c122c;
+}
+
+.content-one .buttonBox a{
+    text-decoration: none;
+}
+
+.content-one .buttonBox a .btn-ok{
+    background-color: #ff2d75;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+    border: 1px solid transparent;
+}
+
+.content-one .buttonBox a>button:active{
+    transform: scale(0.9);
+}
+
+@keyframes animateContent{
+    to{
+        left: 50%;
+        opacity: 1;
+    }
+}
+
+

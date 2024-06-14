@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
+
+/*
+
+    #0c122c -> fundo
+    #4fc3dc -> azul
+    #ff2d75 -> rosa
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* SideBar */
+
+.sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 78px;
+    background-color: #0c122c;
+    padding: 6px 14px;
+    transition: all 0.5s ease fowards;
+}
+
+.sidebar .logoContent .logo{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: #ff2d75;
+    opacity: 0;
+    font-weight: bolder;
+    pointer-events: auto;
+}
+/*
+        #0c122c -> fundo
+    #4fc3dc -> azul
+    #ff2d75 -> rosa
+*/
+.sidebar .links_name{
+    opacity: 0;
+}
+
+.sidebar .logoContent .logo i{
+    font-size: 25px;
+    margin-right: 6px;
+}
+
+.sidebar .logoContent .logo .logoName{
+    font-size: 20px;
+    font-weight: 400;    
+}
+
+.sidebar .bx-menu{
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.sidebar ul{
+    margin-top: 30px;
+}
+
+.sidebar ul li{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 0 5px 0 0;
+    list-style-type: none;
+}
+
+.sidebar ul li a{
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 12px;
+    white-space: nowrap; /*Não deixa quebrar o texto*/
+    transition: all 0.5s ease;
+    animation: sidebarVisible 1s ease;
+}
+
+.sidebar ul li a:hover{
+    color: #11101d;
+    background-color: #FFF;
+}
+
+.sidebar ul li i{
+    min-width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+
+/*  Footer Detalhes   */
+
+.sidebar .profileContent{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #FFF;    
+}
+
+.sidebar .profileContent .profile{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    background-color: #1a1a42;
+    padding: 10px 6px;
+}
+
+.sidebar .profileContent .profileDetails{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 9px;
+    width: 100%;
+    height: 50px;
+    margin: 0 5px 0 0;
+}
+
+.sidebar .profileContent .profileDetails>a{
+    display: flex;
+    align-items: center;   
+    text-align: center;
+    color: #FFF;
+    text-decoration: none;
+    width: 100%;
+    border-radius: 12px;
+    white-space: nowrap; /*Não deixa quebrar o texto*/
+}
+
+.sidebar .profileContent .profileDetails>a:hover{
+    color: #11101d;
+    background-color: #FFF;
+}
+
+.sidebar .profileContent .profileDetails a i{
+    min-width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.profile #logout{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    bottom: 8px;
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+/* Title*/
+.homeContent{
+    position: absolute;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 300px);
+    transition: all 0.5s ease-in-out;
+}
+
+.homeContent h2{
+    margin: 15px;
+    font-size: 25px;
+    font-weight: 400;
+    color: #1d1d31;
+}
+
+
+/*////////////////////////////////////*/ 
+/*  toolipe */
+
+.toolipe{
+    position: absolute;
+    top: 0;
+    left: 122px;
+    transform: translate(-50%, -50%);
+    width: 122px;
+    height: 35px;
+    background-color: #FFF;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #11101d;
+    line-height: 35px;
+    transition: 0;
+    opacity: 0;
+}
+
+.sidebar ul li:hover .toolipe{
+    transition: all 0.5s ease;
+    top: 50%;
+    opacity: 1;
+}
+
+/*///// animate //////*/
+
+.sidebar.active{
+    width: 300px;
+}
+
+.homeContent.active{
+    left: 300px;
+}
+
+.sidebar.active .logoContent .logo{
+    opacity: 1;
+}
+
+.sidebar.active .bx-menu{
+    left: 90%;
+}
+
+.sidebar.active .links_name{
+    opacity: 1;
+    pointer-events: auto; /* normal -> como se não tivesse especificado*/
+
+}
+
+.sidebar.active .profileContent .profileDetails{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar.active #logout{     
+    left: 90%;
+}
+
+.sidebar.active .toolipe{
+    display: none;
+}
+
+/*///////// section ////////////////**/
+
+section{
+    position: relative;
+    margin-left: 4vw;
+    width: 90vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    z-index: -1;
+}
+
+section .box_img{
+    position: absolute;
+    top: 8vh;
+    padding: 60px;
+    height: 600px;
+    width: 850px;
+}
+
+section .box_img img{
+    width: 100%;
+    height: 100%;
+}
+
+section h2{
+    position: absolute;
+    bottom: 55px;
+    text-align: center;
+    font-weight: 700;
+    color: #11101d;
+    font-size: 2.5rem;
+}
+
+section h2::after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: 25%;
+    height: 4px;
+    width: 50%;
+    background-color: #11101d;
+}
+
+
+
+

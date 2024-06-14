@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
+
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body{
+  position: relative;
+}
+
+/*
+
+    #0c122c -> fundo
+    #4fc3dc -> azul
+    #ff2d75 -> rosa
+
+*/
+
+
+header{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #FFF;
+    background-color: #0c122c;
+}
+
+header .title{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+header .title a{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #FFF;
+}
+
+  
+header .title>i{
+    color: #FFF;
+    font-size: 1.5rem;
+  }
+
+header #nav ul{
+    display: flex;
+}
+
+
+
+#menu a:hover{
+    /* red, green, blue, alpha(opacidade) */
+background-color: #ff2d75;
+color:#0c122c;
+}    
+
+#menu{
+    display: flex;
+    list-style-type: none;
+    gap: .5rem; /*cria um espaçamento entre os itens flex, sem margin ou padding*/
+  }
+  
+  #menu a{
+    display: block;
+    color: #FFF;
+    padding: .5rem;
+  }
+  
+  #btn-mobile{
+    display: none;
+  }
+  
+  /*Tudo que estiver abaixo de 600px*/
+  @media(max-width: 600px){
+    #menu{
+      display: block;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+      top: 70px;
+      right: 0px;
+      background-color: #0c122c;
+      height: 0;
+      transition: .6s;
+      z-index: 1000; /*fica por cima de todos outros elementos do site*/
+      visibility: hidden; 
+      overflow-y: hidden;
+      
+      /*VISIBILITY, pode mostrar ou ocultar um elemento, sem afetar o layout do dodocumento,(ou seja, o espaço é criado para elementos independentemente de serem visíveis ou não).*/
+    }
+  
+    #menu li{
+      width: 100%;
+    }
+  
+    #menu li>a{
+      padding-left: 20px;
+    }
+  
+  /*quando o nav tiver a classe de active, eu quero que o menu*/
+    #nav.active #menu{
+      height: calc(100vh - 70px); /*não cria scroll, 100vh menos o height do nav*/
+      visibility: visible;
+      overflow-y: auto;
+    }
+  
+    #menu a{
+      padding: 1rem 0;
+      margin: 0 1rem;
+      border-bottom: 1px solid #0c122c;
+    }
+  
+    #btn-mobile{
+      display: flex;
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;    
+      gap: .5rem;
+    }
+  
+    #hamburguer{
+      border-top: 3px solid;
+      width: 25px;
+      color: #FFF;
+    }
+  /* pseudo elementos em containers, são criados dentro do elemento*/
+    #hamburguer::after, #hamburguer::before{
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25px;
+      background: currentColor;
+      margin-top: 5px;
+      transition: .3s;
+    }
+    /*qunado o nav estiver ativo o hamburguer*/
+    #nav.active #hamburguer{
+      border-top-color: transparent;
+    }
+  
+    #nav.active #hamburguer::before{
+      transform: rotate(135deg);
+    }
+  
+    #nav.active #hamburguer::after{
+      transform: rotate(-135deg);
+      position: relative;
+      top: -7px;
+    }
+}
+
+main{
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+main .info{
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  main .info .img{
+    height: 80px;
+    width: 80px;
+    transform: translateX(20px);
+    border-radius: 50%;
+    background-size: cover;
+  }
+  
+  main .info p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #0c122c;
+  }
+  
+  main .info p::after{
+    content: '';
+    display: block;
+    margin-top: 10px;
+    height: 3px;
+    width: 50%;
+    background-color: #0c122c;
+  }
+
+
+main>p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    animation: textAnimate 1.5s ease infinite;
+}
+
+@keyframes textAnimate{
+    0%, 100%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+
+main .box-video{
+  width: 85vw;
+  padding: 40px;
+  height: 250px;
+  background-color: #0c122c;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+
+main .box-video::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 150%;
+  background: linear-gradient(163deg, rgb(77, 218, 250) 0%, rgb(250, 0, 87) 100%);
+  border-radius: 20px;
+  animation: animateBorder 5s linear infinite;
+}
+
+main .box-video::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #FFF;
+    inset: 4px;
+    border-radius: 20px;
+}
+  
+  @keyframes animateBorder{
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(-360deg);
+    } 
+}
+  
+main .box-video #preview{
+    height: 110%;
+    width: 130%;
+    z-index: 1;
+}
+
+.box-msg{
+  position: absolute;
+  height: 90vh;
+  width: 100%;
+  z-index: 777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: animateBox .8s ease forwards;
+  opacity: 0;
+  animation-delay: 4s;
+}
+
+@keyframes animateBox {
+  0%{
+    transform: scale(1);
+    opacity: 1;
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.box-msg .close{
+  position: absolute;
+  top: 24%;
+  right: 15%;
+}
+
+.close{
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  color: #0c122c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.close>i{
+  font-size: 1.6rem;
+}
+
+.response{
+  height: 50vh;
+  width: 90vw;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #0c122c;
+}
+
+.success{
+  background-color: #00FF00;
+}
+
+.error{
+  background-color: #FF0000;
+}
+
+.response>i{
+  font-size: 9rem;
+  animation: animateIcon 2s ease infinite;
+}
+
+@keyframes animateIcon {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-50px);}
+	60% {transform: translateY(-20px);}
+}
+
+.response>p{
+  margin-top: 20px;
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+
+/*
+    #0c122c -> fundo
+    #4fc3dc -> azul
+    #ff2d75 -> rosa
+
+*/
+

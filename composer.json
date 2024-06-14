@@ -1,0 +1,8 @@
+{
+    "name": "joao/tcc",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/" 
+        }
+    }
+}

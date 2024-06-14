@@ -1,0 +1,54 @@
+/*
+
+    #0c122c -> fundo
+    #4fc3dc -> azul
+    #ff2d75 -> rosa
+
+*/
+
+
+
+.container_filter{
+    position: absolute;
+    width: 50vw;
+    height: 50px;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0c122c;
+    border: 1px solid #0c122c;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.container_filter>span{
+    background-color: #0c122c;
+    color: #FFF;
+    height: 100%;
+    padding: 0 15px;
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container_filter>input{
+    height: 60%;
+    padding-left: 4px;
+    border-radius: 5px;
+    border: 1px solid #ada9a9;
+}
+
+.container_filter>button{
+    height: 60%;
+    background-color: #ff2d75;
+    color: #FFF;
+    cursor: pointer;
+    border: none;
+}
+
+.container_filter>button:hover{
+    background-color: #db2565;
+}

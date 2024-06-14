@@ -1,0 +1,437 @@
+/*
+
+    #0c122c -> fundo
+    #4fc3dc -> azul
+    #ff2d75 -> rosa
+
+*/
+
+
+body{
+    padding-top: 15vh !important;
+    padding-bottom: 15vh !important;
+    overflow: auto !important;
+}
+
+.homeContent{
+    position: fixed;
+}
+
+.content-page{
+    position: relative;
+    width: 80vw;
+    height: 150vh;
+    margin: 0 auto;
+    padding: 40px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-page>span{
+    position: relative;
+    top: 60vh;
+    padding-bottom: 10vh;
+}
+
+.content-first{
+    position: relative;
+    top: 20%;
+    height: min-content;
+    padding: 60px 40px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(242, 249, 255, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateX(200px);
+    transition: all 2s;
+}
+
+.content-first>span h3{
+    position: absolute;
+    top: 8%;
+    left: 9%;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.content-first>span h3::after{
+    content: '';
+    display: block;
+    margin: 10px 0;
+    height: 4px;
+    width: 120%;
+    background-color: #4fc3dc;
+}
+
+.content-first>span {
+    margin-bottom: 85px;
+}
+
+.content-first table{
+    width: 90%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-collapse: collapse;
+}
+
+.content-first table thead{
+    background-color:  #0c122c;  
+    color: #FFF;
+    line-height: 40px; 
+}
+
+.content-first table tbody td{
+    text-align: center;
+    padding: 10px;
+}
+
+.content-first table tbody td a{
+    color: #0c122c;
+    text-decoration: none;
+}
+
+.content-first table tbody td a:hover{
+    background-color: #4fc3dc;
+}
+
+.content-first table tbody td a:active{
+    background-color: #ff2d75;
+    color: #FFF;
+}
+
+.content-first .buttonBox{
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    gap: 0 20px;
+    width: 90%;
+
+}
+
+.content-first .buttonBox>button{
+    height: 80%;
+    width: 150px;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.content-first .buttonBox .btn-cancel{
+    background-color: transparent;
+    border: 2px solid #0c122c;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0c122c;
+}
+.content-first .buttonBox .btn-ok{
+    background-color: #ff2d75;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+    border: 1px solid transparent;
+}
+
+.content-first .buttonBox>button:active{
+    transform: scale(0.9);
+}
+
+/*///////// content-last ////////////////*/
+
+.content-last{
+    position: relative;
+    top: 34%;
+    height: min-content;
+    padding: 60px 40px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 15px;   
+
+    
+    opacity: 0;
+    transform: translateX(200px);
+    transition: all 2s;
+}
+
+.content-last>span h3{
+    position: absolute;
+    left: 9%;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.content-last>span h3::after{
+    content: '';
+    display: block;
+    margin: 10px 0;
+    height: 4px;
+    width: 200%;
+    background-color: #4fc3dc;
+}
+
+.content-last>span {
+    margin-bottom: 85px;
+}
+
+.content-last table{
+    position: relative;
+    width: 90%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-collapse: collapse;
+}
+
+.content-last table thead{
+    background-color:  #0c122c;  
+    color: #FFF;
+    line-height: 40px; 
+}
+
+.content-last table thead th:first-child{
+    width: 25%;
+}
+
+.content-last table tbody td{
+    position: relative;
+    text-align: center;
+    padding: 10px;
+}
+
+.content-last table tbody td:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0 5px;
+}
+
+.content-last table tbody td:last-child a{
+    display: block;
+    margin: auto;
+    text-decoration: none;
+}
+
+.content-last table tbody td:last-child a button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background-color: #0c122c;
+}
+
+.content-last table tbody td:last-child>button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background-color: #0c122c;
+}
+
+.content-last table tbody td:last-child button i{
+    font-size: 1.3rem;
+}
+
+.content-last table tbody td div{
+    position: relative;
+    margin: 0 auto;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.content-last table tbody td div img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.content-last table tbody td div #foto-item{
+    position: absolute;
+    transform: translate(-10%, -90%);
+    width: 370%;
+    height: 400%;
+    border-radius: 50% 50% 50% 0;
+    cursor: default;
+    transition: .2s;
+    opacity: 0;
+}
+
+.content-last table tbody td div img:hover + #foto-item{
+    opacity: 1;
+}
+
+.content-last table tbody td div>img{
+    border-radius: 50%;
+}
+
+.content-last .buttonBox{
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    gap: 0 20px;
+    width: 90%;
+
+}
+
+.content-last .buttonBox a, button{
+    height: 90%;
+    width: 150px;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.content-last .buttonBox a .btn-cancel{
+    background-color: transparent;
+    border: 2px solid #0c122c;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0c122c;
+}
+
+.content-last .buttonBox a{
+    text-decoration: none;
+}
+
+.content-last .buttonBox a .btn-ok{
+    background-color: #ff2d75;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.24);
+    border: 1px solid transparent;
+}
+
+.content-last .buttonBox a>button:active{
+    transform: scale(0.9);
+}
+
+.visible{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* style scroll*/
+
+/*altura e largura*/
+::-webkit-scrollbar{
+    width: 8px;
+    cursor: pointer;
+}
+
+/* barra de progresso*/
+::-webkit-scrollbar-track{
+    background-color: #9f9a9a;
+}
+/* alça */
+::-webkit-scrollbar-thumb{
+    background-color: #141e4a;
+    transition: .8s;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #ff2d75;
+}
+
+#btn-back{
+    position: absolute;
+    z-index: 2;
+    top: 5%;
+    right:  8%;
+    transform: translateX(20px);
+    animation: btn-back 1s infinite;
+}
+#btn-back a{
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#btn-back a i{
+    color: #0c122c;
+    font-size: 2rem;
+}
+
+@keyframes btn-back {
+    to{
+        transform: translateX(0);
+    }
+}
+
+
+/*////////////////////////////////////////*/
+
+/*/////////////////////*/
+
+.msg{
+    position: absolute;
+    background-color: #ff2d75;
+    z-index: 2;
+    padding: 15px 20px;
+    color: #141e4a;
+    border-radius: 20px 20px 0 20px;
+    top: 2%;
+    right: 10%;
+    opacity: 0;
+    transform: translateX(20px);
+    animation: mensagem 2.5s ease-in;
+}
+
+#msg-time{
+    position: absolute;
+    z-index: 2;
+    padding: 15px 20px;
+    background-color: #141e4a;
+    color: #ff2d75;
+    border-radius: 20px 20px 0 20px;
+    top: 15%;
+    right: 10%;
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.ativa{
+    opacity: 1;
+    animation: mensagem 2.5s ease-in;
+}
+
+.msg-error{
+    background-color: #141e4a;
+    color: #ff2d75;
+}
+
+@keyframes mensagem {
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
